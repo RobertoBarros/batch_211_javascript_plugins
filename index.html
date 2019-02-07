@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Playground - JavaScript 101</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <style type="text/css">
+      ul#movies {
+        margin-top: 20px;
+      }
+
+      #results li {
+        cursor: grab;
+      }
+
+      #results li:active {
+        cursor: grabbing;
+      }
+
+      #results li.ghost {
+        filter: grayscale(1);
+        opacity: 0.5;
+      }
+
+      .container {
+        margin-top: 30px;
+      }
+
+      #preview, #editor {
+        margin: 20px auto;
+        max-width: 600px;
+      }
+
+      #preview {
+        min-height: 100px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 6px 12px;
+        text-align: left;
+      }
+
+      #preview img {
+        max-width: 100%;
+      }
+
+    </style>
+    <link rel="stylesheet" href="node_modules/select2/dist/css/select2.css">
+  </head>
+  <body>
+
+    <div class="container">
+
+      <select class="select2">
+        <option>nome 1</option>
+        <option>nome 2</option>
+        <option>nome 3</option>
+        <option>nome 4</option>
+        <option>nome 5</option>
+        <option>nome 6</option>
+      </select>
+
+      <select name="estados-brasil" class="select2">
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+      </select>
+
+    </div>
+
+
+    <div class="container">
+      <textarea class="form-control" id="editor" rows="4"></textarea>
+      <div id="preview"></div>
+    </div>
+
+
+    <div class="container">
+
+      <h1>Mega Filmes</h1>
+
+      <form id='search-form'>
+        <div class="form-group">
+          <label for="search">Movie name</label>
+          <input type="text" class="form-control" id="search" placeholder="Movie Name">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+
+
+      <ul id='results' class="list-inline"></ul>
+    </div>
+
+
+    <script src="main.js"></script>
+  </body>
+</html>
